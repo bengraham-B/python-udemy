@@ -1,3 +1,5 @@
-fruit = ['Apple', 'Peach', "Pear"]
+total = 0
+for number in range(1, 101):
+    total += number
 
-print(fruit)
+print(total)
