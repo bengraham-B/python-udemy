@@ -26,16 +26,19 @@ for letter in chosen_word:
     if letter == guess:
         chosen_array = []
         add_letter = False
+        num = 0
         for l in chosen_word:
             chosen_array.append(l)
 
-        for i in range(0 ,len(chosen_word)):
-            display[i] = letter
+
+        for i in range(0 ,len(chosen_array)):
+                if chosen_array[i] == guess:
+                    display[i] = guess
     # else:
     #     print("Wrong")
-print(display)
 
 
 
 #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
 #Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
+print(display)
