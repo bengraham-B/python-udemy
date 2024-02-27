@@ -1,6 +1,6 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
@@ -35,9 +35,25 @@ def encrypt(text, shift):
         
     print(encrypted_code)
     return encrypted_code
-   
+
+def decrypt(text, shift):
+    decrypted_code = ""
+    
+    for letter in text:
+        index_int = alphabet.index(letter)
+        decoded_index = index_int - shift
+        
+        if decoded_index <= 0:
+            repeate_index = 0 + decoded_index
+            decrypted_code += alphabet[repeate_index]
+
+        else:
+            decrypted_code += alphabet[decoded_index]
+    
+    print(decrypted_code)
 
 #TODO-3: Call 
-encrypt(text=text, shift=shift)
-
-print(len(alphabet))
+if direction == "e":
+    encrypt(text=text, shift=shift)
+elif direction == "d":
+    decrypt(text=text, shift=shift)
