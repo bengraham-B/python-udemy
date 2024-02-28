@@ -6,4 +6,4 @@
 ## Day 7 --- project: hangman
 
 ## Day 8 - Functions: arguments and parameters (Ceaser Cipher)
-## Day 9 - Dictionaries (JS -> Objects) & Nested in lists (arrays)
+## Day 9 - Dictionaries (JS -> Objects) & Nested in lists (arrays) Bidding Project
