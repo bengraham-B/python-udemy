@@ -24,6 +24,19 @@ def check_who_wins(array):
 
     return 21 - sum
 
+def check_pc_cards_16(array):
+    sum = 0
+    for n in array:
+        sum += n
+
+    if sum <= 16:
+        print("16")
+        random16_card = cards[random.randint(1, len(cards)) -1]
+        pc_cards.append(random16_card)
+        print("16 16 16", str(random16_card))
+
+
+
 
 # ========= Game Loop =========
 deal_cards()
@@ -36,6 +49,7 @@ while continue_game == True:
     hit = input("Hit: ")
 
     if hit == "y":
+        check_pc_cards_16(pc_cards)
         os.system('clear')
         deal_cards()
 
@@ -54,6 +68,8 @@ while continue_game == True:
         os.system("clear")
         print("Your Cards", user_cards)
         print("PC Cards", pc_cards)
+
+        check_pc_cards_16(pc_cards)
 
         if check_21(user_cards) == True:
            print("User Won")
